@@ -1,0 +1,6 @@
+require('alaricode.lualine')
+require('alaricode.lsp')
+require('alaricode.telescope')
+require('alaricode.treesitter')
+require('alaricode.nvim-tree')
+require('alaricode.bufferline')

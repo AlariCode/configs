@@ -1,8 +1,0 @@
-require('jakewies.gitsigns')
-require('jakewies.lualine')
-require('jakewies.lsp')
-require('jakewies.telescope')
-require('jakewies.treesitter')
-require('jakewies.tokyonight')
-require('jakewies.nvim-tree')
-require('jakewies.bufferline')

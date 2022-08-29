@@ -1,34 +1,37 @@
-" --- General 
-
-let mapleader = " "
-
-set termguicolors
-set tabstop=4 
-set softtabstop=4
-set shiftwidth=4
-set expandtab
-set smartindent
+" Basic configs
 set number
-set numberwidth=1
 set relativenumber
-set signcolumn=yes
-set noswapfile
+set tabstop=4
+set shiftwidth=4
+syntax enable
+set updatetime=250
+set mouse=a
+let mapleader = " "
+set nowrap
+set scrolloff=8
+set hidden
+set backspace=eol,start,indent
+set whichwrap+=<,>,h,l
+nmap <leader>w :w!<cr>
+nmap <leader>qq :bd<cr>
+nmap <leader>qa :bufdo bd<cr>
+nmap <leader>l :bnext<cr>
+nmap <leader>h :bprevious<cr>
+set incsearch
 set nobackup
+set nowb
+set noswapfile
 set undodir=~/.config/nvim/undodir
 set undofile
-set incsearch
-set nohlsearch
-set ignorecase
-set smartcase
-set nowrap
-set splitbelow
-set splitright
-set hidden
-set scrolloff=999
-set noshowmode
-set updatetime=250 
-set encoding=UTF-8
-set mouse=a
+
+" Restore last position
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
+" Remove sounds
+set noerrorbells
+set novisualbell
+set t_vb=
+set tm=500
 
 
 " --- Plugins
@@ -41,7 +44,6 @@ Plug 'nvim-lualine/lualine.nvim'                   " Status line
 Plug 'akinsho/bufferline.nvim'                     " Buffers
 Plug 'machakann/vim-highlightedyank'               " Highlight yanked text
 Plug 'kyazdani42/nvim-tree.lua'                    " File explorer
-Plug 'folke/tokyonight.nvim', { 'branch': 'main' } " Color scheme
 Plug 'ii14/onedark.nvim'
 " Lsp
 Plug 'neovim/nvim-lspconfig'     
@@ -63,7 +65,7 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 
 call plug#end()
 
-lua require('jakewies')
+lua require('alaricode')
 
 
 " --- Colors
@@ -83,15 +85,9 @@ nnoremap <silent><leader>] :BufferLineCycleNext<Cr>
 nnoremap <silent><leader>q :bdelete<Cr>
 nnoremap <leader>b <cmd>Telescope buffers<cr>
 
+" Window navigation
+nmap <silent> <c-k> :wincmd k<CR>
+nmap <silent> <c-j> :wincmd j<CR>
+nmap <silent> <c-h> :wincmd h<CR>
+nmap <silent> <c-l> :wincmd l<CR>
 
-
-" --- Autocommands
-
-" Remove vert split 
-" https://www.reddit.com/r/vim/comments/effwku/transparent_vertical_bar_in_vim/
-" https://gist.github.com/romainl/379904f91fa40533175dfaec4c833f2f
-set fillchars=vert:\  " there is whitespace after the backslash
-augroup RemoveVertSplit
-    autocmd!
-    autocmd BufEnter,ColorScheme * highlight VertSplit ctermfg=1 ctermbg=None cterm=None
-augroup END
