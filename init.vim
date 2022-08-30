@@ -45,6 +45,7 @@ Plug 'akinsho/bufferline.nvim'                     " Buffers
 Plug 'machakann/vim-highlightedyank'               " Highlight yanked text
 Plug 'kyazdani42/nvim-tree.lua'                    " File explorer
 Plug 'ii14/onedark.nvim'
+Plug 'akinsho/toggleterm.nvim', {'tag' : 'v2.*'}   " Terminal
 " Lsp
 Plug 'neovim/nvim-lspconfig'     
 Plug 'jose-elias-alvarez/null-ls.nvim'
@@ -55,6 +56,8 @@ Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'onsails/lspkind-nvim'
+Plug 'kazhala/close-buffers.nvim'
+Plug 'pantharshit00/vim-prisma'
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'lewis6991/gitsigns.nvim'
