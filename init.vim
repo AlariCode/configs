@@ -46,6 +46,7 @@ Plug 'machakann/vim-highlightedyank'               " Highlight yanked text
 Plug 'kyazdani42/nvim-tree.lua'                    " File explorer
 Plug 'ii14/onedark.nvim'
 Plug 'akinsho/toggleterm.nvim', {'tag' : 'v2.*'}   " Terminal
+Plug 'windwp/nvim-autopairs'					   " Pairing
 " Lsp
 Plug 'neovim/nvim-lspconfig'     
 Plug 'jose-elias-alvarez/null-ls.nvim'
@@ -83,8 +84,8 @@ nnoremap <leader>h :wincmd h<Cr>
 nnoremap <leader>j :wincmd j<Cr>
 nnoremap <leader>k :wincmd k<Cr>
 nnoremap <leader>l :wincmd l<Cr>
-nnoremap <silent><leader>[ :BufferLineCyclePrev<Cr>
-nnoremap <silent><leader>] :BufferLineCycleNext<Cr>
+nnoremap <leader>[ :BufferLineCyclePrev<Cr>
+nnoremap <leader>] :BufferLineCycleNext<Cr>
 nnoremap <silent><leader>q :bdelete<Cr>
 nnoremap <leader>b <cmd>Telescope buffers<cr>
 
